@@ -41,12 +41,6 @@ def reply_to_user(message):
         else:
             bot.reply_to(message, "- يرجى استخدام الأمر بشكل صحيح. على سبيل المثال: /رد ايدي_الشخص الرسالة")
 
-@bot.callback_query_handler(func=lambda call: True)
-def callback_handler(call):
-    if call.data == 'sales':
-        bot.answer_callback_query(call.id, text="زر Sales تحت التطوير")
-    elif call.data == 'music':
-        bot.answer_callback_query(call.id, text="زر Music تحت التطوير")
 
 @bot.message_handler(func=lambda message: True, content_types=['text'])
 def forward_to_owner(message):
@@ -63,4 +57,4 @@ def forward_to_owner(message):
 
 
 print("Working⚡")
-bot.polling(
+bot.polling()
